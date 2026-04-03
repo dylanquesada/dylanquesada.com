@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dylan Quesada</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <span class="nav-name">Dylan Quesada</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reading">Reading</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Dylan Quesada</h1>
+        <p class="hero-tagline">Software Engineer · Builder</p>
+        <p class="hero-location">Remote — Miami</p>
+        <div class="hero-links">
+          <a href="https://linkedin.com/in/dylan-quesada" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <div class="about-body">
+          <p>
+            Full-time software engineer, part-time tinkerer. Language agnostic approach to problem solving. JavaScript, Docker, AWS, SQL.
+          </p>
+
+          <div class="experience">
+            <h3>Experience</h3>
+
+            <div class="exp-item">
+              <span class="exp-role">Senior Software Engineer</span>
+              <span class="exp-company">Northwestern Mutual</span>
+              <span class="exp-date">Oct 2021 – Present</span>
+              <span class="exp-detail">Full-stack JavaScript — straight-through form processing modernization. Node, React, SQL, AWS, Docker, Kubernetes.</span>
+            </div>
+
+            <div class="exp-item">
+              <span class="exp-role">Software Engineer</span>
+              <span class="exp-company">nvisia</span>
+              <span class="exp-date">Apr 2019 – Oct 2021</span>
+              <span class="exp-detail">Agile transformation for FIS (backend Java) · Federal Home Loan Bank of Chicago enterprise modernization (C#, Angular, AWS, Docker).</span>
+            </div>
+
+            <div class="exp-item">
+              <span class="exp-role">Teaching Assistant</span>
+              <span class="exp-company">University of Wisconsin-Extension</span>
+              <span class="exp-date">Mar 2019 – Oct 2019</span>
+              <span class="exp-detail">Lectured and mentored adult students in full-stack web development — MongoDB, Express, React, Node.</span>
+            </div>
+
+            <div class="exp-item">
+              <span class="exp-role">Front End Web Developer</span>
+              <span class="exp-company">Kohl's</span>
+              <span class="exp-date">Jun 2018 – Apr 2019</span>
+              <span class="exp-detail">Built feature-rich landing pages and developed A/B testing variations for web.</span>
+            </div>
+
+          </div>
+
+          <div class="education">
+            <h3>Education</h3>
+            <div class="exp-item">
+              <span class="exp-role">B.A. English, Creative Writing</span>
+              <span class="exp-company">University of Wisconsin-Madison</span>
+              <span class="exp-date">2010 – 2015</span>
+            </div>
+            <div class="exp-item">
+              <span class="exp-role">Full Stack Certificate</span>
+              <span class="exp-company">devCodeCamp</span>
+              <span class="exp-date">2017 – 2018</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+          <a class="project-card" href="https://aquaticsapp.com" target="_blank" rel="noopener">
+            <div class="project-header">
+              <h3>PoolOps</h3>
+              <span class="project-url">aquaticsapp.com ↗</span>
+            </div>
+            <p>Pool management software built for aquatics operators. Streamlines the day-to-day operations of managing pools and water-based facilities.</p>
+            <div class="project-tags">
+              <span>SaaS</span>
+              <span>Aquatics</span>
+              <span>Operations</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="https://shellprompt.dev" target="_blank" rel="noopener">
+            <div class="project-header">
+              <h3>Shell School</h3>
+              <span class="project-url">shellprompt.dev ↗</span>
+            </div>
+            <p>Free interactive platform to learn the command-line commands that AI coding agents execute. Gamified lessons covering grep, awk, sed, pipes, and more — so you know what you're approving.</p>
+            <div class="project-tags">
+              <span>EdTech</span>
+              <span>CLI</span>
+              <span>AI Literacy</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Reading -->
+    <section id="reading" class="section">
+      <div class="container">
+        <h2>Currently Reading</h2>
+
+        <div class="reading-toggle">
+          <button class="toggle-btn active" data-shelf="tech">Stack</button>
+          <button class="toggle-btn" data-shelf="leisure">Stories</button>
+        </div>
+
+        <div class="reading-shelf" id="shelf-tech">
+          <div class="book-queue">
+            <div class="book-row book-active">
+              <div class="book-node">
+                <span class="node-dot pulse"></span>
+                <span class="node-line"></span>
+              </div>
+              <div class="book-info">
+                <span class="book-label">now reading</span>
+                <a href="http://cleancoder.com/products" target="_blank" rel="noopener" class="book-title">Clean Architecture</a>
+                <span class="book-author">Robert C. Martin</span>
+              </div>
+            </div>
+            <div class="book-row book-done">
+              <div class="book-node">
+                <span class="node-dot done"></span>
+                <span class="node-line"></span>
+              </div>
+              <div class="book-info">
+                <span class="book-label">finished</span>
+                <a href="http://cleancoder.com/products" target="_blank" rel="noopener" class="book-title strikethrough">Clean Code</a>
+                <span class="book-author">Robert C. Martin</span>
+              </div>
+            </div>
+            <div class="book-row book-queued">
+              <div class="book-node">
+                <span class="node-dot queued"></span>
+              </div>
+              <div class="book-info">
+                <span class="book-label">up next</span>
+                <a href="https://dataintensive.net" target="_blank" rel="noopener" class="book-title">Designing Data-Intensive Applications</a>
+                <span class="book-author">Martin Kleppmann</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reading-shelf hidden" id="shelf-leisure">
+          <div class="book-queue">
+            <div class="book-row book-active">
+              <div class="book-node">
+                <span class="node-dot pulse"></span>
+                <span class="node-line"></span>
+              </div>
+              <div class="book-info">
+                <span class="book-label">now reading</span>
+                <a href="https://www.ynharari.com/book/nexus/" target="_blank" rel="noopener" class="book-title">Nexus</a>
+                <span class="book-author">Yuval Noah Harari</span>
+              </div>
+            </div>
+            <div class="book-row book-queued">
+              <div class="book-node">
+                <span class="node-dot queued"></span>
+              </div>
+              <div class="book-info">
+                <span class="book-label">up next</span>
+                <a href="https://www.davidgrann.com/book/killers-of-the-flower-moon/" target="_blank" rel="noopener" class="book-title">Killers of the Flower Moon</a>
+                <span class="book-author">David Grann</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section id="writing" class="section section-alt">
+      <div class="container">
+        <h2>Currently Writing</h2>
+        <a class="writing-card" href="https://github.com/dylanquesada/aquatics" target="_blank" rel="noopener">
+          <div class="writing-card-header">
+            <span class="writing-dot"></span>
+            <span class="writing-path">github.com / dylanquesada / <strong>aquatics</strong></span>
+            <span class="writing-arrow">↗</span>
+          </div>
+          <div class="writing-card-body">
+            <p>Pool management software for aquatics operators.</p>
+            <div class="writing-status">
+              <span class="status-dot"></span>
+              <span>active</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Get in touch</h2>
+        <div class="contact-links">
+          <span class="contact-email">dylanqdev@gmail.com</span>
+          <a href="https://linkedin.com/in/dylan-quesada" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Dylan Quesada</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
