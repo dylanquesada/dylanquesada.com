@@ -61,7 +61,7 @@ function renderResume(r) {
   if (r.title) h.push(`<span class="resume-title">${esc(r.title)}</span>`);
   const bits = [c.location, c.phone, c.email].filter(Boolean).map(esc);
   const linkedin = c.linkedin
-    ? ` · <a href="${esc(c.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`
+    ? ` · <a class="resume-linkedin" data-print="${esc(c.linkedin.replace(/^https?:\/\/(www\.)?/, ''))}" href="${esc(c.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`
     : '';
   h.push(`<span class="resume-contact">${bits.join(' · ')}${linkedin}</span>`);
   h.push('</div>');

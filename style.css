@@ -850,6 +850,16 @@ nav a.nav-active {
   .resume-body a {
     text-decoration: none;
   }
+
+  /* Show the actual profile URL instead of "LinkedIn" in the PDF */
+  .resume-linkedin {
+    font-size: 0;
+  }
+
+  .resume-linkedin::after {
+    content: attr(data-print);
+    font-size: 11px;
+  }
 }
 
 /* Fade-in on scroll */
