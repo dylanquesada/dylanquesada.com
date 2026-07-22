@@ -1,0 +1,105 @@
+{
+  "name": "Dylan Quesada",
+  "title": "Software Engineer",
+  "contact": {
+    "location": "Miami Beach, Florida 33140",
+    "phone": "(414) 217-8834",
+    "email": "dylanqdev@gmail.com",
+    "linkedin": "https://linkedin.com/in/dylan-quesada"
+  },
+  "summary": "Skilled Software Engineer with deep understanding of software development processes and track record of driving successful projects from small startups to enterprise organizations. Proven expertise in designing and implementing robust software solutions that meet client needs. Appreciates working in cross-functional teams, but will wear as many hats as needed.",
+  "skills": [
+    "JavaScript / TypeScript",
+    "C#",
+    "Java",
+    "Node.js",
+    "React",
+    "React Native",
+    "Angular 9+",
+    ".NET Core",
+    "Express.js",
+    "SQL (MySQL, PostgreSQL)",
+    "MongoDB",
+    "HTML5",
+    "CSS3",
+    "Sass",
+    "Jest",
+    "Jasmine",
+    "Adobe Test & Target",
+    "Git"
+  ],
+  "work": [
+    {
+      "role": "Sr. Software Engineer",
+      "company": "Northwestern Mutual",
+      "location": "Milwaukee, WI / Remote",
+      "dates": "10/2021 – Current",
+      "bullets": [
+        "Modernization feature development for NM's main platform in highly automated CI/CD environment. (Node.js, React, TypeScript, Jest)",
+        "Deployed frequently using trunk-based git workflow. (Git, CI/CD)",
+        "Supported the application in production. (AWS, Kibana)"
+      ]
+    },
+    {
+      "role": "Software Engineer Consultant",
+      "company": "NVISIA",
+      "location": "Milwaukee, WI / Chicago, IL",
+      "dates": "04/2019 – 10/2021",
+      "bullets": [
+        "Worked with a language agnostic approach for client teams to build system critical solutions with tight turn around.",
+        "Developed and deployed Node.js / Express web app for manufacturing e-commerce portals to reset password after data-breach using SHA-256. (Node.js, Express.js, Jest)",
+        "Developed features and assisted in prod support for 3 Enterprise FinTech applications for regional bank run on Docker with Kubernetes. (.NET Core, Angular 9+, TypeScript, AWS, Datadog, Docker)",
+        "Built Angular 9 front-end web application and .NET Core web api for govt. FinTech org. (Angular 9, JavaScript / TypeScript, Bootstrap 4, Kendo UI, Jasmine, .NET Core, Docker, PostgreSQL)",
+        "Helped client-team of Enterprise FinTech company adjust to Agile Methodology.",
+        "Completed day-to-day development and functional-testing user stories for Java EE 8 Spring Batch application. (Java 8, SOAP, SQL, PuTTY)"
+      ]
+    },
+    {
+      "role": "Fullstack Bootcamp Teaching Assistant",
+      "company": "University of Wisconsin - Extended Campus",
+      "location": "Milwaukee, WI",
+      "dates": "03/2019 – 10/2019",
+      "bullets": [
+        "Taught career-changing individuals how to build full-stack javascript web-apps using MERN stack. (Mongo, Express, React, Node.js)",
+        "Reinforced best practices by providing weekly written feedback to students on their code.",
+        "Debugged side-by-side with students in order to teach them browser tools and how to construct meaningful Google queries."
+      ]
+    },
+    {
+      "role": "Front End Developer (A/B Testing)",
+      "company": "Kohl's Corporate",
+      "location": "Menomonee Falls, WI",
+      "dates": "06/2018 – 03/2019",
+      "bullets": [
+        "Worked with Front-End Architects to maintain & improve local development tools & workflows. (Node.js, Gulp.js, & TDD)",
+        "Developed and A/B tested new customer experiences for Enterprise E-Commerce site. (JS ES6, Sass, & HTML5)",
+        "Worked with Analytics team to measure impact of new experiences on site performance and sales. (Adobe T&T)",
+        "Helped team scale winning experiences with accessible and cross-browser compatible code.",
+        "Helped team transition from Git Desktop GUI to Git CLI."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "credential": "AWS Cloud Practitioner Certification",
+      "institution": "Amazon Web Services",
+      "date": ""
+    },
+    {
+      "credential": "Full Stack Program",
+      "institution": "devCodeCamp",
+      "date": "01/2018"
+    },
+    {
+      "credential": "BA, English",
+      "institution": "UW-Madison",
+      "date": "01/2015"
+    }
+  ],
+  "projects": [
+    {
+      "name": "lollylollyceramics.com",
+      "description": "Worked with a talented ceramicist on a migration from an already existing, beautifully-styled webstore over to a Shopify powered solution."
+    }
+  ]
+}
