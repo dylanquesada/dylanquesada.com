@@ -1,4 +1,4 @@
-// Resume: fetch dylanquesada.json -> build Markdown -> render + download
+// Resume: fetch dylanquesada.json -> render site-styled HTML + Markdown/PDF downloads
 
 function toMarkdown(r) {
   const lines = [];
@@ -50,39 +50,69 @@ function toMarkdown(r) {
   return lines.join('\n');
 }
 
-// Minimal renderer for the Markdown this page generates:
-// #/##/### headings, - lists, **bold**, *italic*, [text](url), paragraphs.
-function renderMarkdown(md) {
-  const escape = (s) =>
-    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function renderResume(r) {
+  const esc = (s) =>
+    String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const c = r.contact || {};
+  const h = [];
 
-  const inline = (s) =>
-    escape(s)
-      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  h.push('<div class="resume-id">');
+  h.push(`<span class="resume-name">${esc(r.name)}</span>`);
+  if (r.title) h.push(`<span class="resume-title">${esc(r.title)}</span>`);
+  const bits = [c.location, c.phone, c.email].filter(Boolean).map(esc);
+  const linkedin = c.linkedin
+    ? ` · <a href="${esc(c.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`
+    : '';
+  h.push(`<span class="resume-contact">${bits.join(' · ')}${linkedin}</span>`);
+  h.push('</div>');
 
-  const html = [];
-  let inList = false;
-  const closeList = () => {
-    if (inList) { html.push('</ul>'); inList = false; }
-  };
+  if (r.summary) {
+    h.push('<h3 class="resume-heading">Professional Summary</h3>');
+    h.push(`<p class="resume-summary">${esc(r.summary)}</p>`);
+  }
 
-  md.split('\n').forEach((line) => {
-    if (line.startsWith('- ')) {
-      if (!inList) { html.push('<ul>'); inList = true; }
-      html.push(`<li>${inline(line.slice(2))}</li>`);
-      return;
-    }
-    closeList();
-    if (line.startsWith('### ')) html.push(`<h4>${inline(line.slice(4))}</h4>`);
-    else if (line.startsWith('## ')) html.push(`<h3>${inline(line.slice(3))}</h3>`);
-    else if (line.startsWith('# ')) html.push(`<h2 class="resume-name">${inline(line.slice(2))}</h2>`);
-    else if (line.trim() !== '') html.push(`<p>${inline(line)}</p>`);
-  });
-  closeList();
+  if (r.skills && r.skills.length) {
+    h.push('<h3 class="resume-heading">Skills</h3>');
+    h.push(`<div class="project-tags resume-skills">${r.skills.map((s) => `<span>${esc(s)}</span>`).join('')}</div>`);
+  }
 
-  return html.join('\n');
+  if (r.work && r.work.length) {
+    h.push('<h3 class="resume-heading">Work History</h3>');
+    h.push('<div class="resume-group">');
+    r.work.forEach((job) => {
+      h.push('<div class="exp-item">');
+      h.push(`<span class="exp-role">${esc(job.role)}</span>`);
+      h.push(`<span class="exp-company">${esc(job.company)}${job.location ? ` — ${esc(job.location)}` : ''}</span>`);
+      h.push(`<span class="exp-date">${esc(job.dates || '')}</span>`);
+      if (job.bullets && job.bullets.length) {
+        h.push(`<ul class="exp-detail resume-bullets">${job.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`);
+      }
+      h.push('</div>');
+    });
+    h.push('</div>');
+  }
+
+  if (r.education && r.education.length) {
+    h.push('<h3 class="resume-heading">Education</h3>');
+    h.push('<div class="resume-group">');
+    r.education.forEach((e) => {
+      h.push('<div class="exp-item">');
+      h.push(`<span class="exp-role">${esc(e.credential)}</span>`);
+      h.push(`<span class="exp-company">${esc(e.institution)}</span>`);
+      h.push(`<span class="exp-date">${esc(e.date || '')}</span>`);
+      h.push('</div>');
+    });
+    h.push('</div>');
+  }
+
+  if (r.projects && r.projects.length) {
+    h.push('<h3 class="resume-heading">Projects</h3>');
+    h.push(`<ul class="resume-bullets resume-projects">${r.projects
+      .map((p) => `<li><strong>${esc(p.name)}</strong> — ${esc(p.description)}</li>`)
+      .join('')}</ul>`);
+  }
+
+  return h.join('\n');
 }
 
 async function initResume() {
@@ -93,7 +123,7 @@ async function initResume() {
     const data = await res.json();
     const md = toMarkdown(data);
 
-    container.innerHTML = renderMarkdown(md);
+    container.innerHTML = renderResume(data);
 
     document.getElementById('download-md').addEventListener('click', () => {
       const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
@@ -105,6 +135,13 @@ async function initResume() {
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('download-pdf').addEventListener('click', () => {
+      const prevTitle = document.title;
+      document.title = 'DYLAN_QUESADA_Resume';
+      window.print();
+      document.title = prevTitle;
     });
   } catch (err) {
     container.innerHTML =
