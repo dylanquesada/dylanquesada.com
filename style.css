@@ -737,11 +737,16 @@ nav a.nav-active {
     --bg: #ffffff;
     --bg-alt: #ffffff;
     --surface: #ffffff;
-    --border: #d8d8d8;
+    --border: #dcdcdc;
     --text: #111111;
     --text-muted: #444444;
     --accent: #1d4ed8;
     --accent-hover: #1d4ed8;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.45in;
   }
 
   body {
@@ -758,17 +763,92 @@ nav a.nav-active {
     padding: 0;
   }
 
-  .resume-heading {
-    margin-top: 28px;
+  .container {
+    max-width: none;
   }
 
-  .exp-item {
-    break-inside: avoid;
+  .resume-body {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 26px 30px;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .resume-id {
+    margin: 0 0 2px;
+    gap: 2px;
+  }
+
+  .resume-name {
+    font-size: 24px;
+  }
+
+  .resume-title {
+    font-size: 13px;
+  }
+
+  .resume-contact {
+    font-size: 11px;
+  }
+
+  .resume-heading {
+    font-size: 11px;
+    margin: 18px 0 10px;
+  }
+
+  .resume-summary {
+    font-size: 11.5px;
+    line-height: 1.55;
+    max-width: none;
+  }
+
+  .project-tags {
+    gap: 4px;
   }
 
   .resume-skills span {
-    border-color: #d8d8d8;
+    font-size: 9.5px;
+    padding: 2px 7px;
+    border-color: #dcdcdc;
     color: #444444;
+  }
+
+  .exp-item {
+    padding: 10px 0;
+    gap: 2px 12px;
+    break-inside: avoid;
+  }
+
+  .exp-role {
+    font-size: 12.5px;
+  }
+
+  .exp-company {
+    font-size: 11.5px;
+  }
+
+  .exp-date {
+    font-size: 11px;
+  }
+
+  .resume-bullets {
+    margin-top: 6px;
+  }
+
+  .resume-bullets li {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    padding-left: 14px;
+  }
+
+  .resume-projects li {
+    font-size: 11.5px;
+  }
+
+  .resume-body a {
+    text-decoration: none;
   }
 }
 
