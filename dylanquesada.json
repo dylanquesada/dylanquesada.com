@@ -98,6 +98,18 @@
   ],
   "projects": [
     {
+      "name": "PoolOps (aquaticsapp.com)",
+      "description": "Pool management SaaS built for aquatics operators — streamlines the day-to-day operations of managing pools and water-based facilities."
+    },
+    {
+      "name": "PillCam (pill-tracker)",
+      "description": "Local-first medication tracker for iOS and Android — dose reminders, video-verified dose logging, adherence stats, and provider-ready exports. Everything stays on-device. (Expo, React Native, TypeScript, SQLite, Drizzle)"
+    },
+    {
+      "name": "MaterialRFQ",
+      "description": "Structured RFQ and quote-comparison tool for machine shops buying raw materials — one request to multiple suppliers, side-by-side quotes, award with a PO packet. (Next.js, NestJS, Prisma, PostgreSQL, AWS)"
+    },
+    {
       "name": "lollylollyceramics.com",
       "description": "Worked with a talented ceramicist on a migration from an already existing, beautifully-styled webstore over to a Shopify powered solution."
     }
