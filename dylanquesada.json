@@ -106,8 +106,12 @@
       "description": "Local-first medication tracker for iOS and Android — dose reminders, video-verified dose logging, adherence stats, and provider-ready exports. Everything stays on-device. (Expo, React Native, TypeScript, SQLite, Drizzle)"
     },
     {
-      "name": "MaterialRFQ",
+      "name": "MaterialRFQ (materialrfq.com)",
       "description": "Structured RFQ and quote-comparison tool for machine shops buying raw materials — one request to multiple suppliers, side-by-side quotes, award with a PO packet. (Next.js, NestJS, Prisma, PostgreSQL, AWS)"
+    },
+    {
+      "name": "ez-resume (ez-resume.com)",
+      "description": "Free browser-based resume, CV, and cover letter builder — no sign-up, 14 themes, drag-and-drop sections, and custom typography. Exports to PDF, DOCX, or Markdown, with every export re-importable for later editing."
     },
     {
       "name": "lollylollyceramics.com",

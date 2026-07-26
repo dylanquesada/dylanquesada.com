@@ -25,6 +25,8 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".claude/*" \
+            --exclude "scripts/*" \
+            --exclude "tools/*" \
             --delete
 
       - name: Invalidate CloudFront cache
